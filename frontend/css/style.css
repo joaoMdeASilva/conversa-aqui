@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,700;1,700&display=swap');
+
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --primary-color: #3D9B26;
+  --link-color: #3F45D8;
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: inter;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* container principal*/
+
+div.container {
+  margin: 0 100px;
+}
+
+/* header principal */
+
+.header-principal {
+  height: 70px;
+  padding: 0 80px;
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-family: Montserrat;
+  color: var(--white-color);
+}
+
+/* Contatos */
+
+.container-contatos {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  margin: 24px 0;
+}
+
+/* container das sections bem vindos e aviso */
+
+div.container-benvidos-inscrever {
+  width: 690px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Bem-vindos */
+section.bem-vindos > h2 {
+  font-size: 40px;
+}
+
+section.bem-vindos > p{
+  font-size: 24px;
+}
+
+/* Aviso */
+
+section.aviso {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* inscrever*/
+
+aside.inscrever {
+  width: 350px;
+  border: 2px solid var(--black-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+aside.inscrever form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+aside.inscrever div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+aside.inscrever label {
+  font-weight: 600;
+}
+
+aside.inscrever input {
+  padding: 5px 0;
+  border: 2px solid var(--black-color);
+  border-radius: 5px;
+}
+
+aside.inscrever button {
+  color: var(--white-color);
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--primary-color);
+  width: 80%;
+  padding: 10px 0;
+  margin: auto;
+}
