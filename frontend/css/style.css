@@ -56,11 +56,16 @@ div.container {
 
 /* container das sections bem vindos e aviso */
 
-div.container-benvidos-inscrever {
+div.container-benvidos-aviso {
   width: 690px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+div.container-contedo-principal-aside {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Bem-vindos */
