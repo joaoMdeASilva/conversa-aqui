@@ -9,7 +9,8 @@
 <body>
   <header class="header-principal"><a href="#" class="logo">Comenta aqui</a></header>
 
-  <main class="principal">
+  <!-- Início do main principal -->
+  <main>
     
       <!-- Início do container principal-->
       <div class="container">
@@ -21,7 +22,7 @@
           <section>
             <h2>Contatos</h2>
             
-            <div class="redes-sociais">
+            <div class="contatos">
               <a href=""><img src="./img/svg/black-github-icon.svg" alt="Github"></a>
               <a href=""><img src="./img/svg/black-linkedin-icon.svg" alt="Linkedin"></a>
               <a href=""><img src="./img/svg/black-instagram-icon.svg" alt="Instagram"></a>
@@ -33,14 +34,29 @@
         <!-- Fim do container contatos -->
       </div>
       
-      <section class="botoes-criar-excluir">
-        <button class="btn-criar">Adicionar comentário</button>
-        <button class="btn-excluir">Excluir Comentário</button>
+      <div class="container-section-botoes">
+        <section class="botoes-criar-excluir">
+          <button class="btn-criar">Adicionar comentário</button>
+          <button class="btn-excluir">Excluir Comentário</button>
+        </section>
+      </div>
+
+      <section class="container-comentarios">
+        <h2>Seus comentários</h2>
+        <div id="comentarios">
+          <div class="nao-possui-comentarios">
+            <p>Não possui nenhum comentário.</p>
+            <p>Adicione o seu livro. <a href="">Clique aqui para criar!</a></p>
+          </div>
+        </div>
       </section>
 
       <!-- Fim do container principal-->
     </div>
+
+  <!-- Fim do main principal -->
   </main>
+
   <!-- Início do footer principal -->
   <footer class="principal">
 
@@ -48,7 +64,7 @@
     <div>
       <h2>Contatos</h2>
       
-      <div class="redes-sociais">
+      <div class="contatos">
         <a href=""><img src="./img/svg/white-github-icon.svg" alt="Github"></a>
         <a href=""><img src="./img/svg/white-linkedin-icon.svg" alt="Linkedin"></a>
         <a href=""><img src="./img/svg/white-instagram-icon.svg" alt="Instagram"></a>

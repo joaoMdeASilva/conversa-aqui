@@ -4,9 +4,15 @@
 :root {
   --white-color: #fff;
   --black-color: #000;
-  --primary-color: #3D9B26;
   --link-color: #3F45D8;
-  
+  --primary-color: #3D9B26;
+  --hover-primary-color: #4EC930;
+  --active-primary-color: #287116;
+  --link-color: #3F45D8;
+  --exclusion-color: #DD5050;
+  --hover-exclusion-color: #FE2121;
+  --active-exclusion-color: #CB0909;
+  --background-footer: #282828;
 }
 
 * {
@@ -52,6 +58,11 @@ div.container {
   width: 100%;
   justify-content: right;
   margin: 24px 0;
+}
+
+div.contatos {
+  display: flex;
+  gap: 10px;
 }
 
 /* container das sections bem vindos e aviso */
@@ -131,3 +142,105 @@ aside.inscrever button {
   padding: 10px 0;
   margin: auto;
 }
+/* colocando o footer em baixo */
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* rodapé */ 
+footer {
+  padding: 20px;
+  color: var(--white-color);
+  background-color: var(--background-footer);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* main page */
+
+/* botões criar e excluir*/
+
+.container-section-botoes {
+  display: flex;
+  justify-content: end;
+  margin-right: 30px;
+}
+
+.botoes-criar-excluir {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-criar {
+  padding: 10px 40px;
+  background-color: var(--primary-color);
+  transition: background-color .2s;
+  color: white;
+  font-weight: 700;
+  border-radius: 100px;
+  border:none
+}
+
+.btn-criar:hover {
+  background-color: var(--hover-primary-color);
+}
+.btn-criar:active {
+  background-color: var(--active-primary-color);
+}
+
+.btn-excluir {
+  padding: 10px 40px;
+  background-color: var(--exclusion-color);
+  color: white;
+  font-weight: 700;
+  border-radius: 100px;
+  border: none;
+  transition: background-color .2s;
+}
+
+.btn-excluir:hover {
+  background-color: var(--hover-exclusion-color);
+}
+.btn-excluir:active {
+  background-color: var(--active-exclusion-color);
+}
+
+/* Area de comentários */
+.container-comentarios {
+  margin-top: 40px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.container-comentarios h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.container-comentarios a {
+  color: var(--link-color);
+  font-weight: 700;
+}
+
+.nao-possui-comentarios {
+  text-align: center;
+}
+
+
