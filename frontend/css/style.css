@@ -131,7 +131,7 @@ aside.inscrever input {
   border-radius: 5px;
 }
 
-aside.inscrever button {
+button.btn-confirmar {
   color: var(--white-color);
   font-size: 18px;
   font-weight: 700;
@@ -141,7 +141,19 @@ aside.inscrever button {
   width: 80%;
   padding: 10px 0;
   margin: auto;
+  cursor: pointer;
+  transition: background-color .2s;
 }
+
+button.btn-confirmar:hover {
+  background-color: var(--hover-primary-color);
+}
+
+button.btn-confirmar:active {
+  background-color: var(--active-primary-color);
+}
+
+
 /* colocando o footer em baixo */
 
 html {
@@ -161,7 +173,7 @@ footer {
 
 /* rodapé */ 
 footer {
-  padding: 20px;
+  padding: 20px 0;
   color: var(--white-color);
   background-color: var(--background-footer);
   display: flex;
@@ -188,11 +200,11 @@ footer {
 .btn-criar {
   padding: 10px 40px;
   background-color: var(--primary-color);
-  transition: background-color .2s;
   color: white;
   font-weight: 700;
   border-radius: 100px;
-  border:none
+  border:none;
+  transition: background-color .2s;
 }
 
 .btn-criar:hover {
@@ -242,5 +254,3 @@ footer {
 .nao-possui-comentarios {
   text-align: center;
 }
-
-
