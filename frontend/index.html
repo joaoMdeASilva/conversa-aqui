@@ -7,21 +7,23 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <header class="header-principal"><a href="#" class="logo">Comenta aqui</a></header>
+  <header class="main-header"><a href="#" class="logo">Comenta aqui</a></header>
+
+  <!-- Início do container do conteúdo principal e lateral  -->
+  <div class="main-aside-container">
 
   <!-- Iníco do main principal -->
   <main>
 
     <!-- Início do cantainer -->
-    <div class="container">
+    <div>
 
-    
-      <div class="container-contatos">
+      <div class="contacts-container">
         <!-- Início section contatos -->
-        <section class="contatos">
+        <section class="contacts">
           <h2>Contatos</h2>
           
-          <div class="contatos">
+          <div class="contacts">
             <a href=""><img src="./img/svg/black-github-icon.svg" alt="Rede social github"></a>
             <a href=""><img src="./img/svg/black-linkedin-icon.svg" alt="Rede social linkedin"></a>
             <a href=""><img src="./img/svg/black-instagram-icon.svg" alt="Rede social instagram"></a>
@@ -31,12 +33,11 @@
         </section>
       </div>
       
-      <div class="container-contedo-principal-aside">
         <!-- Início do container das sections bem vindos e aviso -->
-      <div class="container-benvidos-aviso">
+      <div class="container-welcome-warning">
 
         <!-- Início section bem vindos -->
-        <section class="bem-vindos">
+        <section class="welcome">
           <h2>Seja bem-vindo(a) ao Comente Aqui </h2>
           <p>
             Explore um universo de conversas infinitas em nosso site, onde cada palavra é uma porta para novas ideias, debates e descobertas. 
@@ -46,7 +47,7 @@
         </section>
 
         <!-- Início section aviso -->
-        <section class="aviso">
+        <section class="warning">
           <p>
             Atenção! devido ser um projeto back-end, este projeto só oferece a possibilidade de realizar o CRUD — Abreviasão de realizar ações como criar, ler, atualizar e deletar —
           </p>
@@ -55,54 +56,55 @@
         </section>
 
       <!-- Fim do container das sections bem vindos e aviso -->
-      </div>
-
-        <!-- Início aside inscrever -->
-      <aside class="inscrever">
-        <h2>Inscrever</h2>
-          <form action="">
-            <div>
-              <label for="name">Nome</label>
-              <input type="text" name="name" id="name">
-            </div>
-            
-            <div>
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email">
-            </div>
-
-            <div>
-              <label for="password">Senha</label>
-              <input type="password" name="password" id="password">
-            </div>
-
-            <div>
-              <label for="confirm-password">Confirmar senha</label>
-              <input type="password" name="password" id="confirm-password">
-            </div> 
-            
-            <button class="btn-confirmar">
-              Confirmar
-            </button>
-            
-          </form>
-
-        <!-- Fim aside inscrever -->
-        </aside>
-      </div>
+      </div> 
       
-    
-    <!-- Fim do cantainer -->
+      <!-- Fim do cantainer -->
     </div> 
-
-  <!-- Fim do main principal -->  
+    
+    <!-- Fim do main principal -->  
   </main>
+  
+  <!-- Início aside inscrever -->
+  <aside class="subscribe">
+    <h2>Inscrever</h2>
+      <form action="">
+        <div>
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name">
+        </div>
+        
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
 
+        <div>
+          <label for="password">Senha</label>
+          <input type="password" name="password" id="password">
+        </div>
+
+        <div>
+          <label for="confirm-password">Confirmar senha</label>
+          <input type="password" name="password" id="confirm-password">
+        </div> 
+        
+        <button class="btn">
+          Confirmar
+        </button>
+        
+      </form>
+
+    <!-- Fim aside inscrever -->
+    </aside>
+  
+  <!-- Fim do container do conteúdo principal e lateral  -->
+  </div>
+  
   <!-- Início do footer principal -->
   <footer>
-    <section class="contatos">
+    <section class="contacts">
       <h2>Contatos</h2>
-      <div class="contatos">
+      <div class="contacts">
         <a href=""><img src="./img/svg/white-github-icon.svg" alt="Rede social github"></a>
         <a href=""><img src="./img/svg/white-linkedin-icon.svg" alt="Rede social linkedin"></a>
         <a href=""><img src="./img/svg/white-instagram-icon.svg" alt="Rede social instagram"></a>

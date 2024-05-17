@@ -28,15 +28,17 @@ a {
   text-decoration: none;
 }
 
-/* container principal*/
-
-div.container {
-  margin: 0 100px;
+input {
+  padding: 5px 10px;
+  border: 2px solid var(--black-color);
+  border-radius: 5px;
 }
+
+/* container principal*/
 
 /* header principal */
 
-.header-principal {
+.main-header {
   height: 70px;
   padding: 0 80px;
   text-transform: uppercase;
@@ -46,58 +48,63 @@ div.container {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 18px;
   font-family: Montserrat;
   color: var(--white-color);
 }
 
-/* Contatos */
-
-.container-contatos {
+/* container do conteúdo principal e lateral */
+.main-aside-container {
   display: flex;
-  width: 100%;
-  justify-content: right;
-  margin: 24px 0;
+  justify-content: space-between;
+  margin: 24px 100px 0;
 }
 
-div.contatos {
+/* Contatos */
+
+.main-page-contacts-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 100px;
+}
+
+section.contacts {
+  font-size: 16px;
+}
+
+div.contacts {
   display: flex;
   gap: 10px;
 }
 
 /* container das sections bem vindos e aviso */
 
-div.container-benvidos-aviso {
+div.container-welcome-warning {
   width: 690px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
 }
 
-div.container-contedo-principal-aside {
-  display: flex;
-  justify-content: space-between;
+/* bem vindos */
+section.welcome > h2 {
+  font-size: 32px;
 }
 
-/* Bem-vindos */
-section.bem-vindos > h2 {
-  font-size: 40px;
-}
-
-section.bem-vindos > p{
-  font-size: 24px;
+section.welcome > p{
+  font-size: 18px;
 }
 
 /* Aviso */
 
-section.aviso {
-  font-size: 24px;
+section.warning {
+  font-size: 18px;
   font-weight: 800;
 }
 
 /* inscrever*/
 
-aside.inscrever {
+aside.subscribe {
   width: 350px;
   border: 2px solid var(--black-color);
   display: flex;
@@ -108,50 +115,23 @@ aside.inscrever {
   border-radius: 10px;
 }
 
-aside.inscrever form {
+aside.subscribe form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-aside.inscrever div {
+aside.subscribe div {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-aside.inscrever label {
+aside.subscribe label {
   font-weight: 600;
 }
 
-aside.inscrever input {
-  padding: 5px 0;
-  border: 2px solid var(--black-color);
-  border-radius: 5px;
-}
-
-button.btn-confirmar {
-  color: var(--white-color);
-  font-size: 18px;
-  font-weight: 700;
-  border: none;
-  border-radius: 100px;
-  background-color: var(--primary-color);
-  width: 80%;
-  padding: 10px 0;
-  margin: auto;
-  cursor: pointer;
-  transition: background-color .2s;
-}
-
-button.btn-confirmar:hover {
-  background-color: var(--hover-primary-color);
-}
-
-button.btn-confirmar:active {
-  background-color: var(--active-primary-color);
-}
 
 
 /* colocando o footer em baixo */
@@ -184,55 +164,69 @@ footer {
 
 /* main page */
 
+/* Área de contonstatos da aparte superior */
+
+.contacts-container {
+  display: flex;
+  width: 100%;
+  margin: 24px 0;
+}
+
 /* botões criar e excluir*/
 
-.container-section-botoes {
+.create-delete-buttons-section-container {
   display: flex;
   justify-content: end;
   margin-right: 30px;
 }
 
-.botoes-criar-excluir {
+.create-delete-buttons {
   display: flex;
   gap: 20px;
 }
 
-.btn-criar {
+.btn {
   padding: 10px 40px;
   background-color: var(--primary-color);
   color: white;
   font-weight: 700;
   border-radius: 100px;
   border:none;
-  transition: background-color .2s;
 }
 
-.btn-criar:hover {
+.btn:hover {
   background-color: var(--hover-primary-color);
 }
-.btn-criar:active {
+.btn:active {
   background-color: var(--active-primary-color);
 }
 
-.btn-excluir {
-  padding: 10px 40px;
-  background-color: var(--exclusion-color);
-  color: white;
-  font-weight: 700;
-  border-radius: 100px;
-  border: none;
+.create-btn {
+  background-color: var(--primary-color);
   transition: background-color .2s;
 }
 
-.btn-excluir:hover {
+.create-btn:hover {
+  background-color: var(--hover-primary-color);
+}
+.create-btn:active {
+  background-color: var(--active-primary-color);
+}
+
+.delete-btn {
+  background-color: var(--exclusion-color);
+  transition: background-color .2s;
+}
+
+.delete-btn:hover {
   background-color: var(--hover-exclusion-color);
 }
-.btn-excluir:active {
+.delete-btn:active {
   background-color: var(--active-exclusion-color);
 }
 
-/* Area de comentários */
-.container-comentarios {
+/* Área de comentários */
+.comment-container {
   margin-top: 40px;
   font-weight: 400;
   display: flex;
@@ -241,16 +235,173 @@ footer {
   gap: 5px;
 }
 
-.container-comentarios h2 {
+.comment-container h2 {
   font-size: 36px;
   font-weight: 700;
 }
 
-.container-comentarios a {
+.comment-container a {
   color: var(--link-color);
   font-weight: 700;
 }
 
-.nao-possui-comentarios {
+.no-comment {
   text-align: center;
+}
+
+.comment-box {
+  width: 300px;
+  height: 190px;
+  padding: 30px 20px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.comment-box .edit-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.comment-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.comment-box p {
+  font-size: 16px;
+  height: 100%;
+  border: 1px solid;
+}
+
+.comment-box hr{
+  border-color: var(--black-color);
+}
+
+.like-comments-btn-container {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.like-comments-btn-container div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.like-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.comments-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* box de pedido de colocar a imagem de perfil */
+
+.profile-picture-box {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.profile-picture-box > h2 {
+  font-size: 16px;
+  width: 210px;
+  text-align: center;
+}
+
+.profile-picture-box > .exit {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: url('../img/svg/exit-icon.svg') center;
+  border: none;
+  cursor: pointer;
+}
+
+/* criar comentários*/
+
+.create-comment-box {
+  width: 80%; 
+  border-radius: 10px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white-color); 
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: none;
+}
+
+.create-comment-box > header {
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  border-radius: 10px 10px 0 0;
+}
+.create-comment-box > header > h2 {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.create-comment-box > form {
+  margin: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.create-comment-box > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.create-comment-box  label {
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase; 
+}
+
+.create-comment-box textarea {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 2px solid var(--black-color);
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+}
+
+.create-comment-box button {
+  width: 30%;
 }
