@@ -32,6 +32,7 @@ input {
   padding: 5px 10px;
   border: 2px solid var(--black-color);
   border-radius: 5px;
+  outline: none;
 }
 
 /* container principal*/
@@ -132,7 +133,14 @@ aside.subscribe label {
   font-weight: 600;
 }
 
+aside.subscribe span {
+  font-size: 14px;
+  color: var(--active-exclusion-color)
+}
 
+.required {
+  border: 2px solid var(--active-exclusion-color);
+}
 
 /* colocando o footer em baixo */
 
@@ -227,17 +235,18 @@ footer {
 
 /* Área de comentários */
 .comment-container {
-  margin-top: 40px;
+  width: 1260px;
+  margin: 40px auto 0;
   font-weight: 400;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  gap: 30px;
 }
 
 .comment-container h2 {
   font-size: 36px;
   font-weight: 700;
+  text-align: center;
 }
 
 .comment-container a {
@@ -245,24 +254,26 @@ footer {
   font-weight: 700;
 }
 
+#comments {
+  display: flex ;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .no-comment {
   text-align: center;
 }
 
 .comment-box {
-  width: 300px;
+  width: 260px;
   height: 190px;
   padding: 30px 20px;
   background-color: var(--white-color);
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .comment-box .edit-btn {
@@ -279,10 +290,12 @@ footer {
   font-weight: 700;
 }
 
-.comment-box p {
+p.comment-paragraph {
   font-size: 16px;
   height: 100%;
-  border: 1px solid;
+  overflow: hidden;
+  text-align: justify;
+  
 }
 
 .comment-box hr{
@@ -324,7 +337,7 @@ footer {
   gap: 16px;
   padding: 40px 20px;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   position: absolute;
   top:50%;
@@ -360,7 +373,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--white-color); 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   display: none;
 }
 
@@ -386,6 +399,7 @@ footer {
   flex-direction: column;
   gap: 3px;
 }
+
 
 .create-comment-box  label {
   font-size: 16px;
