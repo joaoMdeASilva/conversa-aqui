@@ -11,16 +11,16 @@ function minNameLength(name) {
 
   // Colocar o aviso do mínimo de caracteres e de preencher o input
   if(name.value.trim().length < minNLength ) {
-    nameForm.classList.add('required');
-    nameForm.setAttribute('onkeyup', 'minNameLength(nameForm)');
+    name.classList.add('required');
+    name.setAttribute('onkeyup', 'minNameLength(nameForm)');
 
-    constMinNameLength.innerText = `'Precisa ter no mínimo ter 3 caracteres'\n${fillInputWarning}`;
+    constMinNameLength.innerText = `Precisa ter no mínimo ter 3 caracteres'\n${fillInputWarning}`;
     return false;
   }
   // Colocar somente o aviso do mínimo de caracteres
   else if(name.value.trim().length < minNLength){
-    nameForm.classList.add('required');
-    nameForm.setAttribute('onkeyup', 'minNameLength(nameForm)');
+    name.classList.add('required');
+    name.setAttribute('onkeyup', 'minNameLength(nameForm)');
 
     constMinNameLength.innerText = fillInputWarning;
     return false;
@@ -40,15 +40,15 @@ function emailValidation(email) {
 
   // retorna se o email está correto ou não
   if (email.value.trim() === '') {
-    emailForm.classList.add('required');
-    emailForm.setAttribute('onkeyup', 'emailValidation(emailForm)');
+    email.classList.add('required');
+    email.setAttribute('onkeyup', 'emailValidation(emailForm)');
 
     emailFormSpan.innerText = fillInputWarning;
     
     return false;
   } else if (emailRegex.test(email.value) == false) {
-    emailForm.classList.add('required');
-    emailForm.setAttribute('onkeyup', 'emailValidation(emailForm)');
+    email.classList.add('required');
+    email.setAttribute('onkeyup', 'emailValidation(emailForm)');
 
     emailFormSpan.innerText = 'digite um email valido. Ex.: example@example.com'
 
@@ -64,35 +64,24 @@ function emailValidation(email) {
   }
 }
 
-// Span
-const minPasswordLengthSpan = document.querySelector('#min-password-lenght');
+
 
 // Validação de tamanho de senha
 function minPasswordLength(password) {
   // Tamanho mínimo de caracteres da senha
   const minPLength = 8;
-  
-  if (password.value.length === '') {
-    passwordForm.classList.add('required');
-    passwordForm.setAttribute('onkeyup', 'minPasswordLength(passwordForm)');
 
-    minPasswordLengthSpan.innerText =  fillInputWarning;
+  // Span
+  const minPasswordLengthSpan = document.querySelectorAll('.min-password-lenght');
 
-    return false;
-  }
-  else if (password.value.length < minPLength) {
-    passwordForm.classList.add('required');
-    passwordForm.setAttribute('onkeyup', 'minPasswordLength(passwordForm)');
+  if (password.value === '') {
+    console.log(password);
 
-    minPasswordLengthSpan.innerText =  'A senha deve conter no mínimo 8 caracteres';
-
+    password.classList.add('required');
+    password.setAttribute('onkeyup', `minPasswordLength(${password.id})`);
     return false;
   } else {
-    minPasswordLengthSpan.innerText =  '';
-
-    passwordForm.classList.remove('required');
-
-    return true;
+    password.classList.remove('required');
   }
 }
 
@@ -100,7 +89,6 @@ const nameForm = document.querySelector('#name'); // Variavel para pegar o input
 const emailForm = document.querySelector('#email');
 const passwordForm = document.querySelector('#password');
 const confirmPasswordForm = document.querySelector('#confirm-password');
-
 
 const form = document.querySelector('.subscribe');
 
@@ -118,6 +106,10 @@ form.addEventListener('submit', (event) => {
   if (!minPasswordLength(passwordForm)) {
    event.preventDefault();
   }
+
+  if (!minPasswordLength(confirmPasswordForm)) {
+    event.preventDefault();
+   }
 }); 
 
 // faz a verificação se tudo está conforme a validação para envir o formulário 
