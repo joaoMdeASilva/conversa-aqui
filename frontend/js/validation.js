@@ -13,11 +13,7 @@ function formValidation() {
   const textLength = 3;
   
 
-  if (isInputEmpty(emailForm.value.trim())) {
-    errorMensage(emailForm, 'Este campo é obrigatório.');
-  } else {
-    errorMensage(emailForm, '', true)
-  }
+  
   
 
   if (isInputEmpty(passwordForm.value.trim())) {
@@ -34,16 +30,25 @@ function formValidation() {
   
   const nameValidationResult = minLength(nameForm, textLength);
 
-  if (nameValidationResult === 'lowerThanError') {
+  if (!nameValidationResult && !isInputEmpty(nameForm.value.trim())) {
 
     errorMensage(nameForm, `Deve possuir no mínimo ${textLength} caracteres`);
 
-  } else if (nameValidationResult === 'zeroValueError') {
-
+  } else if (isInputEmpty(nameForm.value.trim())) {
     errorMensage(nameForm, 'Este campo é obrigatório.');
-
   } else {
     errorMensage(nameForm, '', true)
+  }
+
+  // validação de email
+  const emailValidationResult = isValidEmail(emailForm.value.trim());
+
+  if (!emailValidationResult && !isInputEmpty(emailForm.value.trim())) {
+    errorMensage(emailForm, 'Digite um email valido. Ex.: example@example.com')
+  } else if (isInputEmpty(emailForm.value.trim())) {
+    errorMensage(emailForm, 'Este campo é obrigatório.');
+  } else {
+    errorMensage(emailForm, '', true)
   }
 }
 
@@ -82,20 +87,10 @@ function errorMensage(input, text = '', clean = false) {
 }
 
 function minLength(input, length) {
-  errorLength = {
-    lowerThanError: 'lowerThanError',
-    zeroValueError: 'zeroValueError'
-  }
-
   if(input.value.trim().length < length && input.value.trim().length != 0) {
     input.classList.add('required');
 
-    return errorLength.lowerThanError;
-  } else if (input.value.trim().length === 0)  {
-
-    input.classList.add('required')
-
-    return errorLength.zeroValueError;
+    return false;
   } else {
     
     input.classList.remove('required');
@@ -104,9 +99,9 @@ function minLength(input, length) {
   }
 }
 
-function isEmail(email) {
+function isValidEmail(email) {
   const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
-  
+
   return regex.test(email); 
 }
 
