@@ -10,8 +10,8 @@ function formValidation() {
   const emailForm = getEmail();
   const passwordForm = getPassword();
   const confirmPasswordForm = getConfirmPassword();
-  const textLength = 3;
-  
+  const minTextLength = 3;
+  const minTextLengthPassword = 8;
 
   
   
@@ -28,11 +28,11 @@ function formValidation() {
     errorMensage(confirmPasswordForm, '', true)
   }
   
-  const nameValidationResult = minLength(nameForm, textLength);
+  const nameValidationResult = minLength(nameForm, minTextLength);
 
   if (!nameValidationResult && !isInputEmpty(nameForm.value.trim())) {
 
-    errorMensage(nameForm, `Deve possuir no mínimo ${textLength} caracteres`);
+    errorMensage(nameForm, `Deve possuir no mínimo ${minTextLength} caracteres`);
 
   } else if (isInputEmpty(nameForm.value.trim())) {
     errorMensage(nameForm, 'Este campo é obrigatório.');
@@ -49,6 +49,45 @@ function formValidation() {
     errorMensage(emailForm, 'Este campo é obrigatório.');
   } else {
     errorMensage(emailForm, '', true)
+  }
+  
+  // Validação da senha
+  const passwordValidationResult = minLength(passwordForm, minTextLengthPassword);
+  
+  if (!passwordValidationResult && !isInputEmpty(passwordForm.value.trim())) {
+
+    errorMensage(passwordForm, `Deve possuir no mínimo ${minTextLengthPassword} caracteres`);
+
+  } else if (isInputEmpty(passwordForm.value.trim())) {
+    errorMensage(passwordForm, 'Este campo é obrigatório.');
+  } else {
+    errorMensage(passwordForm, '', true)
+  }
+
+  // Validação de confirmação de senha
+  const confirmPasswordValidationResult = minLength(confirmPasswordForm, minTextLengthPassword);
+  
+  if (!confirmPasswordValidationResult && !isInputEmpty(passwordForm.value.trim())) {
+
+    errorMensage(confirmPasswordForm, `Deve possuir no mínimo ${minTextLengthPassword} caracteres`);
+
+  } else if (isInputEmpty(confirmPasswordForm.value.trim())) {
+
+    errorMensage(confirmPasswordForm, 'Este campo é obrigatório.');
+
+  } else {
+
+    errorMensage(confirmPasswordForm, '', true)
+
+  }
+
+  // verificar se a senha está correta 
+
+  const validationPasswordsResult = validationPasswords(passwordForm, confirmPasswordForm);
+  
+  if (!validationPasswordsResult && passwordValidationResult && confirmPasswordValidationResult) {
+    errorMensage(passwordForm, 'Erro! Senhas diferentes.')
+    errorMensage(confirmPasswordForm, 'Erro! Senhas diferentes.');
   }
 }
 
@@ -87,11 +126,17 @@ function errorMensage(input, text = '', clean = false) {
 }
 
 function minLength(input, length) {
-  if(input.value.trim().length < length && input.value.trim().length != 0) {
+  if(input.value.trim().length < length && input.value.trim() != '') {
     input.classList.add('required');
 
     return false;
-  } else {
+  } else if(input.value.trim().length < length) {
+    input.classList.add('required');
+
+    return false;
+  } 
+  
+  else  {
     
     input.classList.remove('required');
     
@@ -105,3 +150,6 @@ function isValidEmail(email) {
   return regex.test(email); 
 }
 
+function validationPasswords(password, confirmPassowrd) {
+  return password === confirmPassowrd;
+}
