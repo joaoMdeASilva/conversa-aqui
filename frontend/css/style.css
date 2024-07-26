@@ -4,9 +4,15 @@
 :root {
   --white-color: #fff;
   --black-color: #000;
-  --primary-color: #3D9B26;
   --link-color: #3F45D8;
-  
+  --primary-color: #3D9B26;
+  --hover-primary-color: #4EC930;
+  --active-primary-color: #287116;
+  --link-color: #3F45D8;
+  --exclusion-color: #DD5050;
+  --hover-exclusion-color: #FE2121;
+  --active-exclusion-color: #CB0909;
+  --background-footer: #282828;
 }
 
 * {
@@ -22,15 +28,18 @@ a {
   text-decoration: none;
 }
 
-/* container principal*/
-
-div.container {
-  margin: 0 100px;
+input {
+  padding: 5px 10px;
+  border: 2px solid var(--black-color);
+  border-radius: 5px;
+  outline: none;
 }
+
+/* container principal*/
 
 /* header principal */
 
-.header-principal {
+.main-header {
   height: 70px;
   padding: 0 80px;
   text-transform: uppercase;
@@ -40,48 +49,63 @@ div.container {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 18px;
   font-family: Montserrat;
   color: var(--white-color);
 }
 
+/* container do conteúdo principal e lateral */
+.main-aside-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 100px 0;
+}
+
 /* Contatos */
 
-.container-contatos {
+.main-page-contacts-container {
   display: flex;
-  width: 100%;
-  justify-content: right;
-  margin: 24px 0;
+  justify-content: flex-end;
+  margin: 20px 100px;
+}
+
+section.contacts {
+  font-size: 16px;
+}
+
+div.contacts {
+  display: flex;
+  gap: 10px;
 }
 
 /* container das sections bem vindos e aviso */
 
-div.container-benvidos-inscrever {
+div.container-welcome-warning {
   width: 690px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
 }
 
-/* Bem-vindos */
-section.bem-vindos > h2 {
-  font-size: 40px;
+/* bem vindos */
+section.welcome > h2 {
+  font-size: 32px;
 }
 
-section.bem-vindos > p{
-  font-size: 24px;
+section.welcome > p{
+  font-size: 18px;
 }
 
 /* Aviso */
 
-section.aviso {
-  font-size: 24px;
+section.warning {
+  font-size: 18px;
   font-weight: 800;
 }
 
 /* inscrever*/
 
-aside.inscrever {
+aside.subscribe {
   width: 350px;
   border: 2px solid var(--black-color);
   display: flex;
@@ -92,37 +116,306 @@ aside.inscrever {
   border-radius: 10px;
 }
 
-aside.inscrever form {
+aside.subscribe form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-aside.inscrever div {
+aside.subscribe div {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-aside.inscrever label {
+aside.subscribe label {
   font-weight: 600;
 }
 
-aside.inscrever input {
-  padding: 5px 0;
-  border: 2px solid var(--black-color);
-  border-radius: 5px;
+aside.subscribe span {
+  font-size: 14px;
+  color: var(--active-exclusion-color)
 }
 
-aside.inscrever button {
+.required {
+  border: 2px solid var(--active-exclusion-color);
+}
+
+/* colocando o footer em baixo */
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* rodapé */ 
+footer {
+  padding: 20px 0;
   color: var(--white-color);
+  background-color: var(--background-footer);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* main page */
+
+/* Área de contonstatos da aparte superior */
+
+.contacts-container {
+  display: flex;
+  width: 100%;
+  margin: 24px 0;
+}
+
+/* botões criar e excluir*/
+
+.create-delete-buttons-section-container {
+  display: flex;
+  justify-content: end;
+  margin-right: 30px;
+}
+
+.create-delete-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 40px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+  border-radius: 100px;
+  border:none;
+}
+
+.btn:hover {
+  background-color: var(--hover-primary-color);
+}
+.btn:active {
+  background-color: var(--active-primary-color);
+}
+
+.create-btn {
+  background-color: var(--primary-color);
+  transition: background-color .2s;
+}
+
+.create-btn:hover {
+  background-color: var(--hover-primary-color);
+}
+.create-btn:active {
+  background-color: var(--active-primary-color);
+}
+
+.delete-btn {
+  background-color: var(--exclusion-color);
+  transition: background-color .2s;
+}
+
+.delete-btn:hover {
+  background-color: var(--hover-exclusion-color);
+}
+.delete-btn:active {
+  background-color: var(--active-exclusion-color);
+}
+
+/* Área de comentários */
+.comment-container {
+  width: 1260px;
+  margin: 40px auto 0;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.comment-container h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.comment-container a {
+  color: var(--link-color);
+  font-weight: 700;
+}
+
+#comments {
+  display: flex ;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.no-comment {
+  text-align: center;
+}
+
+.comment-box {
+  width: 260px;
+  height: 190px;
+  padding: 30px 20px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment-box .edit-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.comment-box h3 {
   font-size: 18px;
   font-weight: 700;
+}
+
+p.comment-paragraph {
+  font-size: 16px;
+  height: 100%;
+  overflow: hidden;
+  text-align: justify;
+  
+}
+
+.comment-box hr{
+  border-color: var(--black-color);
+}
+
+.like-comments-btn-container {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.like-comments-btn-container div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.like-btn {
   border: none;
-  border-radius: 100px;
+  background: none;
+  cursor: pointer;
+}
+
+.comments-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* box de pedido de colocar a imagem de perfil */
+
+.profile-picture-box {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.profile-picture-box > h2 {
+  font-size: 16px;
+  width: 210px;
+  text-align: center;
+}
+
+.profile-picture-box > .exit {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: url('../img/svg/exit-icon.svg') center;
+  border: none;
+  cursor: pointer;
+}
+
+/* criar comentários*/
+
+.create-comment-box {
+  width: 80%; 
+  border-radius: 10px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white-color); 
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  display: none;
+}
+
+.create-comment-box > header {
+  padding: 15px 30px;
   background-color: var(--primary-color);
-  width: 80%;
-  padding: 10px 0;
-  margin: auto;
+  border-radius: 10px 10px 0 0;
+}
+.create-comment-box > header > h2 {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.create-comment-box > form {
+  margin: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.create-comment-box > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+.create-comment-box  label {
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase; 
+}
+
+.create-comment-box textarea {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 2px solid var(--black-color);
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+}
+
+.create-comment-box button {
+  width: 30%;
 }
