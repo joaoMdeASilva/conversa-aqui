@@ -8,7 +8,6 @@
   --primary-color: #3D9B26;
   --hover-primary-color: #4EC930;
   --active-primary-color: #287116;
-  --link-color: #3F45D8;
   --exclusion-color: #DD5050;
   --hover-exclusion-color: #FE2121;
   --active-exclusion-color: #CB0909;
@@ -20,12 +19,20 @@
   padding: 0;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
 body {
   font-family: inter;
 }
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 input {
@@ -61,21 +68,26 @@ input {
   margin: 24px 100px 0;
 }
 
-/* Contatos */
-
-.main-page-contacts-container {
+.contacts-container {
+  font-size: 1.2rem;
   display: flex;
-  justify-content: flex-end;
-  margin: 20px 100px;
+  flex-direction: column;
+  gap: .5rem;
+  width: fit-content;
 }
 
-section.contacts {
-  font-size: 16px;
+.contacts-list {
+  display: flex;
+  gap: 1rem;
 }
 
-div.contacts {
-  display: flex;
-  gap: 10px;
+.contacts-container a {
+  color: var(--black-color);
+  font-weight: 700;
+}
+
+footer .contacts-container a {
+  color: var(--white-color);
 }
 
 /* container das sections bem vindos e aviso */
@@ -173,12 +185,6 @@ footer {
 /* main page */
 
 /* Área de contonstatos da aparte superior */
-
-.contacts-container {
-  display: flex;
-  width: 100%;
-  margin: 24px 0;
-}
 
 /* botões criar e excluir*/
 
