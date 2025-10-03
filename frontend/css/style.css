@@ -29,6 +29,12 @@ body {
 
 a {
   text-decoration: none;
+  font-weight: 600;
+  transition: opacity .1s;
+}
+
+a:hover {
+  opacity: .5;
 }
 
 ul {
@@ -61,7 +67,6 @@ input {
   color: var(--white-color);
 }
 
-/* container do conteúdo principal e lateral */
 .main-aside-container {
   display: flex;
   justify-content: space-between;
@@ -69,11 +74,11 @@ input {
 }
 
 .contacts-container {
+  width: fit-content;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  width: fit-content;
 }
 
 .contacts-list {
@@ -83,7 +88,6 @@ input {
 
 .contacts-container a {
   color: var(--black-color);
-  font-weight: 700;
 }
 
 footer .contacts-container a {
