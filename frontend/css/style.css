@@ -17,6 +17,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -42,39 +43,46 @@ ul {
 }
 
 input {
-  padding: 5px 10px;
+  all: unset;
+  padding: 0.3125rem 0.625rem;
   border: 2px solid var(--black-color);
   border-radius: 5px;
-  outline: none;
 }
 
-/* container principal*/
-
-/* header principal */
+button {
+  all: unset;
+}
 
 .main-header {
-  height: 70px;
-  padding: 0 80px;
-  text-transform: uppercase;
+  padding: 2rem 5rem;
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
 }
 
 .logo {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: Montserrat;
+  text-transform: uppercase;
   color: var(--white-color);
 }
 
-.main-aside-container {
+.container {
   display: flex;
   justify-content: space-between;
-  margin: 24px 100px 0;
+  margin: 5rem 15%;
+  gap: 80px;
+}
+
+main {
+  max-width: 50rem;
+  min-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .contacts-container {
-  width: fit-content;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -94,127 +102,92 @@ footer .contacts-container a {
   color: var(--white-color);
 }
 
-/* container das sections bem vindos e aviso */
-
 div.container-welcome-warning {
-  width: 690px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
-/* bem vindos */
-section.welcome > h2 {
-  font-size: 32px;
+.welcome>p {
+  font-size: 1.125rem;
 }
 
-section.welcome > p{
-  font-size: 18px;
-}
-
-/* Aviso */
-
-section.warning {
-  font-size: 18px;
+.warning {
+  font-size: 1.125rem;
   font-weight: 800;
 }
 
-/* inscrever*/
-
-aside.subscribe {
-  width: 350px;
+.login-container {
+  padding: 2.5rem;
+  width: 24rem;
   border: 2px solid var(--black-color);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 40px;
-  border-radius: 10px;
 }
 
-aside.subscribe form {
-  width: 100%;
+.login-container form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  gap: 0.625rem;
 }
 
-aside.subscribe div {
-  width: 100%;
+.login-container div {
   display: flex;
   flex-direction: column;
+  width: fit-content;
 }
 
-aside.subscribe label {
+.login-container label {
   font-weight: 600;
 }
 
-aside.subscribe span {
-  font-size: 14px;
-  color: var(--active-exclusion-color)
+.login-container span {
+  font-size: 0.875rem;
+  color: var(--active-exclusion-color);
 }
 
 .required {
   border: 2px solid var(--active-exclusion-color);
 }
 
-/* colocando o footer em baixo */
-
-html {
-  height: 100%;
-  min-height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
 footer {
-  margin-top: auto;
-}
-
-/* rodapé */ 
-footer {
-  padding: 20px 0;
+  padding: 1.25rem 0;
   color: var(--white-color);
   background-color: var(--background-footer);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 2.5rem;
 }
-
-/* main page */
-
-/* Área de contonstatos da aparte superior */
-
-/* botões criar e excluir*/
 
 .create-delete-buttons-section-container {
   display: flex;
   justify-content: end;
-  margin-right: 30px;
+  margin-right: 1.875rem;
 }
 
 .create-delete-buttons {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .btn {
-  padding: 10px 40px;
+  padding: 0.625rem 2.5rem;
   background-color: var(--primary-color);
   color: white;
   font-weight: 700;
+  text-align: center;
   border-radius: 100px;
-  border:none;
+  border: none;
 }
 
 .btn:hover {
   background-color: var(--hover-primary-color);
 }
+
 .btn:active {
   background-color: var(--active-primary-color);
 }
@@ -227,6 +200,7 @@ footer {
 .create-btn:hover {
   background-color: var(--hover-primary-color);
 }
+
 .create-btn:active {
   background-color: var(--active-primary-color);
 }
@@ -239,22 +213,22 @@ footer {
 .delete-btn:hover {
   background-color: var(--hover-exclusion-color);
 }
+
 .delete-btn:active {
   background-color: var(--active-exclusion-color);
 }
 
-/* Área de comentários */
 .comment-container {
-  width: 1260px;
-  margin: 40px auto 0;
+  width: 78.75rem;
+  margin: 2.5rem auto 0;
   font-weight: 400;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .comment-container h2 {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
 }
@@ -265,8 +239,8 @@ footer {
 }
 
 #comments {
-  display: flex ;
-  gap: 20px;
+  display: flex;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
@@ -275,15 +249,15 @@ footer {
 }
 
 .comment-box {
-  width: 260px;
-  height: 190px;
-  padding: 30px 20px;
+  width: 16.25rem;
+  height: 11.875rem;
+  padding: 1.875rem 1.25rem;
   background-color: var(--white-color);
   border-radius: 10px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .comment-box .edit-btn {
@@ -291,24 +265,23 @@ footer {
   background: none;
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.625rem;
+  right: 0.625rem;
 }
 
 .comment-box h3 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 
 p.comment-paragraph {
-  font-size: 16px;
+  font-size: 1rem;
   height: 100%;
   overflow: hidden;
   text-align: justify;
-  
 }
 
-.comment-box hr{
+.comment-box hr {
   border-color: var(--black-color);
 }
 
@@ -316,13 +289,13 @@ p.comment-paragraph {
   margin-top: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .like-comments-btn-container div {
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 .like-btn {
@@ -337,89 +310,86 @@ p.comment-paragraph {
   cursor: pointer;
 }
 
-/* box de pedido de colocar a imagem de perfil */
-
 .profile-picture-box {
   width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 40px 20px;
+  gap: 1rem;
+  padding: 2.5rem 1.25rem;
   border-radius: 10px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
 }
 
-.profile-picture-box > h2 {
-  font-size: 16px;
-  width: 210px;
+.profile-picture-box>h2 {
+  font-size: 1rem;
+  width: 13.125rem;
   text-align: center;
 }
 
-.profile-picture-box > .exit {
-  width: 18px;
-  height: 18px;
+.profile-picture-box>.exit {
+  width: 1.125rem;
+  height: 1.125rem;
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 0.625rem;
+  right: 1.25rem;
   background: url('../img/svg/exit-icon.svg') center;
   border: none;
   cursor: pointer;
 }
 
-/* criar comentários*/
-
 .create-comment-box {
-  width: 80%; 
+  width: 80%;
   border-radius: 10px;
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--white-color); 
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--white-color);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   display: none;
 }
 
-.create-comment-box > header {
-  padding: 15px 30px;
+.create-comment-box>header {
+  padding: 0.9375rem 1.875rem;
   background-color: var(--primary-color);
   border-radius: 10px 10px 0 0;
 }
-.create-comment-box > header > h2 {
+
+.create-comment-box>header>h2 {
   color: white;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-transform: uppercase;
 }
 
-.create-comment-box > form {
-  margin: 20px 30px;
+.create-comment-box>form {
+  margin: 1.25rem 1.875rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
-.create-comment-box > form > div {
+
+.create-comment-box>form>div {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 0.1875rem;
 }
 
-
-.create-comment-box  label {
-  font-size: 16px;
+.create-comment-box label {
+  font-size: 1rem;
   font-weight: 800;
-  text-transform: uppercase; 
+  text-transform: uppercase;
 }
 
 .create-comment-box textarea {
-  font-size: 16px;
-  padding: 5px 10px;
+  font-size: 1rem;
+  padding: 0.3125rem 0.625rem;
   border: 2px solid var(--black-color);
   border-radius: 5px;
   outline: none;
@@ -428,4 +398,23 @@ p.comment-paragraph {
 
 .create-comment-box button {
   width: 30%;
+}
+
+@media (max-width: 1215px) {
+  .container {
+    margin: 2rem 5%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 415px) {
+  .main-header {
+    justify-content: center;
+  }
+
+  main {
+    min-width: 0;
+  }
 }
