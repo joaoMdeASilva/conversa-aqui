@@ -417,4 +417,8 @@ p.comment-paragraph {
   main {
     min-width: 0;
   }
+
+  section.contacts-container {
+    display: none;
+  }
 }
