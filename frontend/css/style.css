@@ -102,6 +102,18 @@ main {
   color: var(--black-color);
 }
 
+/* Deixar o footer sempre em baixo */
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 footer .contacts-container a {
   color: var(--white-color);
 }
@@ -158,12 +170,13 @@ div.container-welcome-warning {
 }
 
 footer {
-  padding: 1.25rem 0;
+  margin-top: auto;
+  padding: 1.25rem 20%;
   color: var(--white-color);
   background-color: var(--background-footer);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2.5rem;
 }
 
@@ -411,6 +424,12 @@ p.comment-paragraph {
     flex-wrap: wrap;
     gap: 30px;
   }
+
+  footer {
+      padding: 1.25rem 10%;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
 }
 
 @media (max-width: 415px) {
@@ -424,5 +443,10 @@ p.comment-paragraph {
 
   section.contacts-container {
     display: none;
+  }
+
+  footer {
+    padding: 2rem 10%;
+    text-align: center;
   }
 }
