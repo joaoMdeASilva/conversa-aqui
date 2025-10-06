@@ -24,8 +24,13 @@ h2 {
   font-size: 1.5rem;
 }
 
+h3 {
+  font-size: 1.1rem;
+}
+
 body {
   font-family: inter;
+  font-size: 1rem;
 }
 
 a {
@@ -83,10 +88,9 @@ main {
 }
 
 .contacts-container {
-  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .1rem;
 }
 
 .contacts-list {
