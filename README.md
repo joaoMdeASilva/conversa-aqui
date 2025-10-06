@@ -1,6 +1,6 @@
 <h1 align="center">Comenta Aqui</h1>
 <p align="center">
-    <img src="./readme-screenshot/conversa-aqui-screenshot.webp" alt="Imagem do site conversa aqui"  width="600">
+    <img src="./readme-screenshot/comenta-aqui-screenshot.webp" alt="Imagem do site conversa aqui"  width="600">
 </p>
 
 ## Navegação
