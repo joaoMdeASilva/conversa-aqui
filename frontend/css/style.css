@@ -118,6 +118,10 @@ footer .contacts-container a {
   color: var(--white-color);
 }
 
+footer span {
+  font-weight: 600;
+}
+
 div.container-welcome-warning {
   display: flex;
   flex-direction: column;
@@ -432,18 +436,26 @@ p.comment-paragraph {
     flex-wrap: wrap;
     gap: 30px;
   }
+}
+
+@media (max-width: 800px) {
+  footer {
+    padding: 1.25rem 18%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 620px) {
+  .main-header {
+    justify-content: center;
+  }
 
   footer {
-    padding: 1.25rem 10%;
-    flex-wrap: wrap;
     justify-content: center;
   }
 }
 
 @media (max-width: 415px) {
-  .main-header {
-    justify-content: center;
-  }
 
   main {
     min-width: 0;
@@ -456,5 +468,6 @@ p.comment-paragraph {
   footer {
     padding: 2rem 10%;
     text-align: center;
+    justify-content: center;
   }
 }
