@@ -118,6 +118,10 @@ footer .contacts-container a {
   color: var(--white-color);
 }
 
+footer span {
+  font-weight: 600;
+}
+
 div.container-welcome-warning {
   display: flex;
   flex-direction: column;
