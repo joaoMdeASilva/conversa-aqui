@@ -1,5 +1,7 @@
 <h1 align="center">Conversa aqui</h1>
-<img src="./readme-screenshot/conversa-aqui-screenshot.webp" alt="Imagem do site conversa aqui" align="center" width="600">
+<p align="center">
+    <img src="./readme-screenshot/conversa-aqui-screenshot.webp" alt="Imagem do site conversa aqui"  width="600">
+</p>
 
 ## Navegação
 - [Sobre](#sobre)
