@@ -1,4 +1,4 @@
-<h1 align="center">Conversa aqui</h1>
+<h1 align="center">Comenta Aqui</h1>
 <p align="center">
     <img src="./readme-screenshot/conversa-aqui-screenshot.webp" alt="Imagem do site conversa aqui"  width="600">
 </p>
@@ -9,7 +9,7 @@
 - [Tecnologias Atualmente utilizadas](#tecnologias-atualmente-utilizadas)
 
 ## Sobre
-O Conversa aqui é um site fictício, que tem como objetivo ser uma rede social para a conversação
+O Comenta Aqui é um site fictício, que tem como objetivo ser uma rede social para a conversação
 
 Este é um projeto Full-stack (apresenta tanto a interface (Front-end) e a interação como o servidor Back-end)
 
