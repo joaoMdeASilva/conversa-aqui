@@ -1,0 +1,24 @@
+<h1 align="center">Conversa aqui</h1>
+<img src="" alt="Imagem do site conversa aqui" align="center">
+
+## Navegação
+- [Sobre](#sobre)
+- [Metas a serem cumpridas](#metas-a-serem-cumpridas)
+- [Tecnologias Atualmente utilizadas](#tecnologias-atualmente-utilizadas)
+
+## Sobre
+O Conversa aqui é um site fictício, que tem como objetivo ser uma rede social para a conversação
+
+Este é um projeto Full-stack (apresenta tanto a interface (Front-end) e a interação como o servidor Back-end)
+
+### Metas a serem cumpridas
+- [ ] Desenvolver o Front-end
+    - [ ] Tela de início
+    - [ ] Tela principal
+    - [ ] Tela de interação
+- [ ] Escolher a linguagem para o Back-end
+- [ ] Escolher um Banco de Dados
+
+### Tecnologias Atualmente utilizadas
+- HTML, CSS JavaScript (Front-end)
+- NodeJs (Back-end, mas posso mudar de tecnologia)
