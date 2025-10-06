@@ -136,19 +136,24 @@ div.container-welcome-warning {
 .login-container {
   padding: 2.5rem;
   width: 24rem;
-  border: 2px solid var(--black-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.login-container h3 {
+  text-transform: uppercase;
+}
+
 .login-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.625rem;
+  gap: 1rem;
 }
+
 
 .login-container div {
   display: flex;
@@ -156,6 +161,9 @@ div.container-welcome-warning {
   width: fit-content;
 }
 
+.input-form-container {
+  gap: .5rem;
+}
 .login-container label {
   font-weight: 600;
 }
@@ -426,9 +434,9 @@ p.comment-paragraph {
   }
 
   footer {
-      padding: 1.25rem 10%;
-      flex-wrap: wrap;
-      justify-content: center;
+    padding: 1.25rem 10%;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
