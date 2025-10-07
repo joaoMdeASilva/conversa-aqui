@@ -17,13 +17,11 @@ function formValidation() {
   // Saber es todos os campo estão validos ou não
   let valid = true;
 
-  const nameLengthValidation = minLength(getName, minTextLengthName); // validando o tamanho do nome
-
   if (isInputEmpty(getName.value.trim())) {
     errorMensage(getName, 'Este campo é obrigatório.');
 
     valid = false;
-  } else if (nameLengthValidation) {
+  } else if (minLength(getName, minTextLengthName)) {
     errorMensage(getName, `Deve possuir no mínimo ${minTextLengthName} caracteres`);
 
     valid = false;
@@ -32,8 +30,6 @@ function formValidation() {
   }
 
   // Validação do campo de email
-
-  // Variavel com o resultado da validação do email
 
   if (isInputEmpty(getEmail.value.trim())) {
     errorMensage(getEmail, 'Este campo é obrigatório.');
@@ -49,15 +45,12 @@ function formValidation() {
 
   // Validação do campo de senha
 
-  // Variavel com o resultado da validação do tamanho da senha
-  const passwordValidationResult = minLength(getPassword, minTextLengthPassword); // validando o tamanho da senha
-
-  if (!passwordValidationResult && !isInputEmpty(getPassword.value.trim())) {
-    errorMensage(getPassword, `Deve possuir no mínimo ${minTextLengthPassword} caracteres`);
-
-    valid = false;
-  } else if (isInputEmpty(getPassword.value.trim())) {
+  if (isInputEmpty(getPassword.value.trim())) {
     errorMensage(getPassword, 'Este campo é obrigatório.');
+    
+    valid = false;
+  } else if (!minLength(getPassword, minTextLengthPassword)) {
+    errorMensage(getPassword, `Deve possuir no mínimo ${minTextLengthPassword} caracteres`);
 
     valid = false;
   } else {
@@ -69,32 +62,31 @@ function formValidation() {
 
   // Variavel com o resultado da validação do tamanho da senha de confirmação
   // validando o tamanho da senha de confirmação
-  const confirmPasswordValidationResult = minLength(getConfirmPassword, minTextLengthPassword);
+  // const confirmPasswordValidationResult = minLength(getConfirmPassword, minTextLengthPassword);
 
-  if (!confirmPasswordValidationResult && !isInputEmpty(getPassword.value.trim())) {
-    errorMensage(getConfirmPassword, `Deve possuir no mínimo ${minTextLengthPassword} caracteres`);
+  // if (!confirmPasswordValidationResult && !isInputEmpty(getPassword.value.trim())) {
+  //   errorMensage(getConfirmPassword, `Deve possuir no mínimo ${minTextLengthPassword} caracteres`);
 
-    valid = false;
-  } else if (isInputEmpty(getConfirmPassword.value.trim())) {
-    errorMensage(getConfirmPassword, 'Este campo é obrigatório.');
+  //   valid = false;
+  // } else if (isInputEmpty(getConfirmPassword.value.trim())) {
+  //   errorMensage(getConfirmPassword, 'Este campo é obrigatório.');
 
-    valid = false;
-  } else {
-    errorMensage(getConfirmPassword, '', true)
+  //   valid = false;
+  // } else {
+  //   errorMensage(getConfirmPassword, '', true)
+  // }
 
-  }
+  // // Validação das senhas, valida se são iguais
 
-  // Validação das senhas, valida se são iguais
+  // // Variavel com o resutado da validação das senhas
+  // // verificar se as senhas estão correta 
+  // const validationPasswordsResult = validationPasswords(getPassword, getConfirmPassword);
 
-  // Variavel com o resutado da validação das senhas
-  // verificar se as senhas estão correta 
-  const validationPasswordsResult = validationPasswords(getPassword, getConfirmPassword);
-
-  if (!validationPasswordsResult && passwordValidationResult && confirmPasswordValidationResult) {
-    errorMensage(getPassword, 'Erro! Senhas diferentes.')
-    errorMensage(getConfirmPassword, 'Erro! Senhas diferentes.');
-    valid = false;
-  }
+  // if (!validationPasswordsResult && passwordValidationResult && confirmPasswordValidationResult) {
+  //   errorMensage(getPassword, 'Erro! Senhas diferentes.')
+  //   errorMensage(getConfirmPassword, 'Erro! Senhas diferentes.');
+  //   valid = false;
+  // }
 
   // Verificação se já está valido para mudar de página
   if (valid) {
