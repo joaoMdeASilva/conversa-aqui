@@ -1,6 +1,6 @@
 import Helper from './Helper.js'
 
-export default class PasswordValidation {
+export default class UserPasswordValidation {
     isUserPasswordAndConfirmPasswordEqual(password, confirmPassowrd) {
         return password.value === confirmPassowrd.value;
     }

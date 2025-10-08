@@ -1,6 +1,6 @@
 import Helper from "./classes/validation/Helper.js";
-import UserNameValidation from "./classes/validation/NameValidation.js";
-import PasswordValidation from "./classes/validation/PasswordValidation.js";
+import UserNameValidation from "./classes/validation/UserNameValidation.js";
+import UserPasswordValidation from "./classes/validation/UserPasswordValidation.js";
 import UserEmailValidation from "./classes/validation/UserEmailValidation.js";
 
 const loginForm = document.querySelector('#loginForm'); // Pegando o formulário
@@ -28,11 +28,11 @@ function formValidation() {
   const emailValidation = new UserEmailValidation(getEmail);
   valid = emailValidation.isUserEmailValid();
 
-  const passwordValidation = new PasswordValidation();
-  valid = passwordValidation.isUserPasswordValid(getPassword, minPassLength);
-  valid = passwordValidation.isUserPasswordValid(getConfirmPassword, minPassLength);
+  const userPasswordValidation = new UserPasswordValidation();
+  valid = userPasswordValidation.isUserPasswordValid(getPassword, minPassLength);
+  valid = userPasswordValidation.isUserPasswordValid(getConfirmPassword, minPassLength);
 
-  if (!passwordValidation.isUserPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
+  if (!userPasswordValidation.isUserPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
     Helper.errorMesage(getPassword, 'As senhas devem ser iguais.')
     Helper.errorMesage(getConfirmPassword, 'As senhas devem ser iguais.');
 
