@@ -10,13 +10,14 @@ export default class UserNameValidation {
         if (Helper.isInputEmpty(this.userName.value.trim())) {
             Helper.errorMesage(this.userName, 'Este campo é obrigatório.');
 
-            valid = false;
+            return false;
         } else if (Helper.minLength(this.userName, this.minNameLength)) {
             Helper.errorMesage(this.userName, `Deve possuir no mínimo ${this.minNameLength} caracteres`);
 
-            valid = false;
-        } else {
-            Helper.errorMesage(this.userName, '', true)
+            return false;
         }
+
+        Helper.errorMesage(this.userName, '', true);
+        return true;
     }
 }

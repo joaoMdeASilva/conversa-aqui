@@ -14,8 +14,9 @@ export default class UserPasswordValidation {
             Helper.errorMesage(password, `Deve possuir no mínimo ${minPassLength} caracteres`);
 
             return false;
-        } else {
-            Helper.errorMesage(password, '', true)
         }
+
+        Helper.errorMesage(password, '', true)
+        return true;
     }
 }
