@@ -28,16 +28,22 @@ function formValidation() {
   const emailValidation = new UserEmailValidation(getEmail);
   valid = emailValidation.isUserEmailValid();
 
-  const userPasswordValidation = new UserPasswordValidation();
-  valid = userPasswordValidation.isUserPasswordValid(getPassword, minPassLength);
-  valid = userPasswordValidation.isUserPasswordValid(getConfirmPassword, minPassLength);
+  const userPasswordValidation = new UserPasswordValidation(getPassword, getConfirmPassword, minPassLength);
 
-  if (!userPasswordValidation.isUserPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
-    Helper.errorMesage(getPassword, 'As senhas devem ser iguais.')
-    Helper.errorMesage(getConfirmPassword, 'As senhas devem ser iguais.');
-
-    valid = false;
+  valid = userPasswordValidation.isUserPasswordValid();
+  valid = userPasswordValidation.isUserConfirmPasswordValid();
+  
+  try {
+    if (!userPasswordValidation.isUserPasswordAndConfirmPasswordEqual()) {
+      Helper.errorMesage(getPassword, 'As senhas devem ser iguais.')
+      Helper.errorMesage(getConfirmPassword, 'As senhas devem ser iguais.');
+  
+      valid = false;
+    }
+  } catch(err) {
+    console.error(err);
   }
+
 
   // Verificação se já está valido para mudar de página
   if (valid) {
