@@ -16,7 +16,7 @@ loginForm.addEventListener('submit', (event) => {
 
 function formValidation() {
   const minNameLength = 3;
-  const minTextLengthPassword = 8;
+  const minPassLength = 8;
 
   // Vararel para dizer se o formulário é válido ou não
   let valid = true;
@@ -42,8 +42,8 @@ function formValidation() {
   // Validação do campo de senha
   const passwordValidation = new PasswordValidation();
   
-  valid = passwordValidation.passwordInputValidation(getPassword);
-  valid = passwordValidation.passwordInputValidation(getConfirmPassword);
+  valid = passwordValidation.passwordInputValidation(getPassword, minPassLength);
+  valid = passwordValidation.passwordInputValidation(getConfirmPassword, minPassLength);
 
   // Verificação se os inputs senha e confirmação senha são iguais
   if (!passwordValidation.isPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
