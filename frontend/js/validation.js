@@ -1,6 +1,7 @@
 import Helper from "./classes/validation/Helper.js";
 import UserNameValidation from "./classes/validation/NameValidation.js";
 import PasswordValidation from "./classes/validation/PasswordValidation.js";
+import UserEmailValidation from "./classes/validation/UserEmailValidation.js";
 
 const loginForm = document.querySelector('#loginForm'); // Pegando o formulário
 
@@ -22,30 +23,15 @@ function formValidation() {
   let valid = true;
 
   const userNameValidation = new UserNameValidation(getName, minNameLength);
-
   valid = userNameValidation.isValidUserName();
 
-  // Validação do campo de email
+  const emailValidation = new UserEmailValidation(getEmail);
+  valid = emailValidation.isUserEmailValid();
 
-  if (Helper.isInputEmpty(getEmail.value.trim())) {
-    Helper.errorMesage(getEmail, 'Este campo é obrigatório.');
-
-    valid = false
-  } else if (!isValidEmail(getEmail.value.trim())) {
-    Helper.errorMesage(getEmail, 'Digite um email valido. Ex.: example@example.com')
-
-    valid = false;
-  } else {
-    Helper.errorMesage(getEmail, '', true)
-  }
-
-  // Validação do campo de senha
   const passwordValidation = new PasswordValidation();
-  
   valid = passwordValidation.passwordInputValidation(getPassword, minPassLength);
   valid = passwordValidation.passwordInputValidation(getConfirmPassword, minPassLength);
 
-  // Verificação se os inputs senha e confirmação senha são iguais
   if (!passwordValidation.isPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
     Helper.errorMesage(getPassword, 'As senhas devem ser iguais.')
     Helper.errorMesage(getConfirmPassword, 'As senhas devem ser iguais.');
@@ -57,13 +43,4 @@ function formValidation() {
   if (valid) {
     window.location.href = "./html/main-page.html"
   }
-}
-
-// retorna se o tamanho mínimo de caracteres de um determinado input está menor(false) ou maior ou igual(true) 
-
-// Retorna se o email é valido(true) ou não(false)
-function isValidEmail(email) {
-  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
-
-  return emailRegex.test(email);
 }
