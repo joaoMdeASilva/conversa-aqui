@@ -1,11 +1,11 @@
 import Helper from './Helper.js'
 
 export default class PasswordValidation {
-    isPasswordAndConfirmPasswordEqual(password, confirmPassowrd) {
+    isUserPasswordAndConfirmPasswordEqual(password, confirmPassowrd) {
         return password.value === confirmPassowrd.value;
     }
 
-    passwordInputValidation(password, minPassLength) {
+    isUserPasswordValid(password, minPassLength) {
         if (Helper.isInputEmpty(password.value.trim())) {
             Helper.errorMesage(password, 'Este campo é obrigatório.');
 

@@ -23,16 +23,16 @@ function formValidation() {
   let valid = true;
 
   const userNameValidation = new UserNameValidation(getName, minNameLength);
-  valid = userNameValidation.isValidUserName();
+  valid = userNameValidation.isUserNameValid();
 
   const emailValidation = new UserEmailValidation(getEmail);
   valid = emailValidation.isUserEmailValid();
 
   const passwordValidation = new PasswordValidation();
-  valid = passwordValidation.passwordInputValidation(getPassword, minPassLength);
-  valid = passwordValidation.passwordInputValidation(getConfirmPassword, minPassLength);
+  valid = passwordValidation.isUserPasswordValid(getPassword, minPassLength);
+  valid = passwordValidation.isUserPasswordValid(getConfirmPassword, minPassLength);
 
-  if (!passwordValidation.isPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
+  if (!passwordValidation.isUserPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
     Helper.errorMesage(getPassword, 'As senhas devem ser iguais.')
     Helper.errorMesage(getConfirmPassword, 'As senhas devem ser iguais.');
 
