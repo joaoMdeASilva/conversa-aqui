@@ -15,11 +15,11 @@ export default class Helper {
     }
 
     static errorMesage(input, text = '', clean = false) {
-
-        if (clean === true) {
+        if (clean) {
             input.nextElementSibling.innerText = "";
             return input.classList.remove('required');
         }
+
         input.classList.add('required');
 
         return input.nextElementSibling.innerText = text;

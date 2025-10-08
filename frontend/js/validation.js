@@ -1,4 +1,5 @@
 import Helper from "./classes/validation/Helper.js";
+import UserNameValidation from "./classes/validation/NameValidation.js";
 import PasswordValidation from "./classes/validation/PasswordValidation.js";
 
 const loginForm = document.querySelector('#loginForm'); // Pegando o formulário
@@ -14,23 +15,15 @@ loginForm.addEventListener('submit', (event) => {
 });
 
 function formValidation() {
-  const minTextLengthName = 3;
+  const minNameLength = 3;
   const minTextLengthPassword = 8;
 
-  // Saber es todos os campo estão validos ou não
+  // Vararel para dizer se o formulário é válido ou não
   let valid = true;
 
-  if (Helper.isInputEmpty(getName.value.trim())) {
-    Helper.errorMesage(getName, 'Este campo é obrigatório.');
+  const userNameValidation = new UserNameValidation(getName, minNameLength);
 
-    valid = false;
-  } else if (Helper.minLength(getName, minTextLengthName)) {
-    Helper.errorMesage(getName, `Deve possuir no mínimo ${minTextLengthName} caracteres`);
-
-    valid = false;
-  } else {
-    Helper.errorMesage(getName, '', true)
-  }
+  valid = userNameValidation.isValidUserName();
 
   // Validação do campo de email
 
