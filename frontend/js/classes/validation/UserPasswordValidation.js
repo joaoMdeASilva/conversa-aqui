@@ -40,12 +40,12 @@ export default class UserPasswordValidation {
 
             return false;
         } else if (!Helper.minLength(this.#confirmPassword, this.#minPassLength)) {
-            Helper.errorMessage(`Deve possuir no mínimo ${minPassLength} caracteres`);
+            Helper.errorMessage(this.#confirmPassword, `Deve possuir no mínimo ${this.#minPassLength} caracteres`);
 
             return false;
         }
-
         Helper.errorMessage(this.#confirmPassword, '', true)
+        
         return true;
     }
 
