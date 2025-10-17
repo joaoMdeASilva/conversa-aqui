@@ -19,29 +19,24 @@ function formValidation() {
   const minNameLength = 3;
   const minPassLength = 8;
 
-  // Vararel para dizer se o formulário é válido ou não
-  let valid = true;
-
   const userNameValidation = new UserNameValidation(getName, minNameLength);
-  valid = userNameValidation.isUserNameValid();
+  const userNameValidationResult = userNameValidation.isUserNameValid();
 
   const emailValidation = new UserEmailValidation(getEmail);
-  valid = emailValidation.isUserEmailValid();
+  const userEmailValidationResult = emailValidation.isUserEmailValid();
 
   const userPasswordValidation = new UserPasswordValidation(minPassLength, getPassword, getConfirmPassword);
 
-  valid = userPasswordValidation.isUserPasswordValid();
-  valid = userPasswordValidation.isUserConfirmPasswordValid();
+  const userPassworValidationResult = userPasswordValidation.isUserPasswordValid();
+  const userConfirmPasswordValidationResult = userPasswordValidation.isUserConfirmPasswordValid();
 
   if (!userPasswordValidation.isUserPasswordAndConfirmPasswordEqual()) {
     Helper.errorMessage(getPassword, 'As senhas devem ser iguais.')
     Helper.errorMessage(getConfirmPassword, 'As senhas devem ser iguais.');
-
-    valid = false;
   }
 
+  const validation = userNameValidationResult && userEmailValidationResult && userPassworValidationResult && userConfirmPasswordValidationResult;
   // Verificação se já está valido para mudar de página
-  if (valid) {
-    window.location.href = "./html/main-page.html"
-  }
+  if (validation)
+    window.location.href = "./html/main-page.html";
 }
