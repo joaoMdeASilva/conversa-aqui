@@ -175,7 +175,7 @@ div.container-welcome-warning {
   font-weight: 600;
 }
 
-.login-container span {
+.invalid-input-message {
   font-size: 0.875rem;
   color: var(--active-exclusion-color);
 }
