@@ -29,13 +29,13 @@ function formValidation() {
 
   const userPassworValidationResult = userPasswordValidation.isUserPasswordValid();
   const userConfirmPasswordValidationResult = userPasswordValidation.isUserConfirmPasswordValid();
+  const isUserPasswordAndConfirmPasswordEqualResult = userPasswordValidation.isUserPasswordAndConfirmPasswordEqual()
 
-  if (!userPasswordValidation.isUserPasswordAndConfirmPasswordEqual()) {
-    Helper.errorMessage(getPassword, 'As senhas devem ser iguais.')
-    Helper.errorMessage(getConfirmPassword, 'As senhas devem ser iguais.');
+  if (!isUserPasswordAndConfirmPasswordEqualResult && userConfirmPasswordValidationResult) {
+    Helper.errorMessage(getConfirmPassword, 'A senha de confirmação deve ser igual a senha anterior!');
   }
 
-  const validation = userNameValidationResult && userEmailValidationResult && userPassworValidationResult && userConfirmPasswordValidationResult;
+  const validation = userNameValidationResult && userEmailValidationResult && userPassworValidationResult && userConfirmPasswordValidationResult && isUserPasswordAndConfirmPasswordEqualResult;
   // Verificação se já está valido para mudar de página
   if (validation)
     window.location.href = "./html/main-page.html";
