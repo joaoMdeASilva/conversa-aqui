@@ -8,16 +8,16 @@ export default class UserEmailValidation {
 
     isUserEmailValid() {
         if (Helper.isInputEmpty(this.#email.value.trim())) {
-            Helper.errorMesage(this.#email, 'Este campo é obrigatório.');
+            Helper.errorMessage(this.#email, 'Este campo é obrigatório.');
 
             return false;
         } else if (!isEmailFormatValid(this.#email.value.trim())) {
-            Helper.errorMesage(this.#email, 'Digite um email valido. Ex.: example@example.com')
+            Helper.errorMessage(this.#email, 'Digite um email valido. Ex.: example@example.com')
 
             return false;
         }
         
-        Helper.errorMesage(this.#email, '', true)
+        Helper.errorMessage(this.#email, '', true)
         return true;
     }
 

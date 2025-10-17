@@ -14,7 +14,11 @@ export default class Helper {
         return true;
     }
 
-    static errorMesage(input, text = '', clean = false) {
+    static errorMessage(input, text = '', clean = false) {
+        if (!this.isHtmlElement(input)) {
+            throw new TypeError(`"input" argument must be an instance of HTMLElement.`);
+        }
+
         if (clean) {
             input.nextElementSibling.innerText = "";
             return input.classList.remove('required');
@@ -23,5 +27,9 @@ export default class Helper {
         input.classList.add('required');
 
         return input.nextElementSibling.innerText = text;
+    }
+
+    static isHtmlElement(htmlElement) {
+        return htmlElement instanceof HTMLElement;
     }
 }

@@ -28,13 +28,14 @@ function formValidation() {
   const emailValidation = new UserEmailValidation(getEmail);
   valid = emailValidation.isUserEmailValid();
 
-  const userPasswordValidation = new UserPasswordValidation();
-  valid = userPasswordValidation.isUserPasswordValid(getPassword, minPassLength);
-  valid = userPasswordValidation.isUserPasswordValid(getConfirmPassword, minPassLength);
+  const userPasswordValidation = new UserPasswordValidation(minPassLength, getPassword, getConfirmPassword);
 
-  if (!userPasswordValidation.isUserPasswordAndConfirmPasswordEqual(getPassword, getConfirmPassword)) {
-    Helper.errorMesage(getPassword, 'As senhas devem ser iguais.')
-    Helper.errorMesage(getConfirmPassword, 'As senhas devem ser iguais.');
+  valid = userPasswordValidation.isUserPasswordValid();
+  valid = userPasswordValidation.isUserConfirmPasswordValid();
+
+  if (!userPasswordValidation.isUserPasswordAndConfirmPasswordEqual()) {
+    Helper.errorMessage(getPassword, 'As senhas devem ser iguais.')
+    Helper.errorMessage(getConfirmPassword, 'As senhas devem ser iguais.');
 
     valid = false;
   }
