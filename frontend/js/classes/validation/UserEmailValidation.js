@@ -8,18 +8,19 @@ export default class UserEmailValidation {
 
     isUserEmailValid() {
         if (Helper.isInputEmpty(this.#email.value.trim())) {
-            Helper.errorMesage(this.#email, 'Este campo é obrigatório.');
+            Helper.errorMessage(this.#email, 'Este campo é obrigatório.');
 
-            valid = false
+            return false;
         } else if (!isEmailFormatValid(this.#email.value.trim())) {
-            Helper.errorMesage(this.#email, 'Digite um email valido. Ex.: example@example.com')
+            Helper.errorMessage(this.#email, 'Digite um email valido. Ex.: example@example.com')
 
-            valid = false;
-        } else {
-            Helper.errorMesage(this.#email, '', true)
+            return false;
         }
+        
+        Helper.errorMessage(this.#email, '', true)
+        return true;
     }
-    
+
     isEmailFormatValid() {
         const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
 
