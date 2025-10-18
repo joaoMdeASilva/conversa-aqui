@@ -14,22 +14,43 @@ export default class Helper {
         return true;
     }
 
-    static errorMessage(input, text = '', clean = false) {
-        if (!this.isHtmlElement(input)) {
-            throw new TypeError(`"input" argument must be an instance of HTMLElement.`);
+    static errorMessage(inputElement, text = '', clean = false) {
+        if (!this.isHtmlElement(inputElement)) {
+            throw new TypeError(this.typeOrInstanceErrorMessageTemplate('inputElement', 'HTMLElement', 'instance'));
         }
 
         if (clean) {
-            input.nextElementSibling.innerText = "";
-            return input.classList.remove('required');
+            inputElement.nextElementSibling.innerText = "";
+            return inputElement.classList.remove('required');
         }
 
-        input.classList.add('required');
+        inputElement.classList.add('required');
 
-        return input.nextElementSibling.innerText = text;
+        return inputElement.nextElementSibling.innerText = text;
     }
 
     static isHtmlElement(htmlElement) {
         return htmlElement instanceof HTMLElement;
+    }
+
+    static isString(arg) { return typeof arg || arg instanceof String }
+
+    static typeOrInstanceErrorMessageTemplate(parameterName, parameterType, typeOrInstance = 'both') {
+        if (!this.isString(parameterName))
+            throw new TypeError('"ParameterName" argument must be a type string.');
+        
+        if(!this.isString(parameterType))
+            throw new TypeError('"pameterType" argument must be a type string.');
+        
+        const typeOrInst = {
+            type: 'a type',
+            instance: 'an instance of',
+            both: 'an instance or type'
+        };
+        
+        if(!typeOrInst[typeOrInstance])
+            throw new Error(`typeOrInstance argument string value must be: ${Object.keys(typeOrInst).toString().replace(/,/g, ', ')}.`);
+
+        return `"${parameterName}" argument must be ${typeOrInst[typeOrInstance]} ${parameterType}.`;
     }
 }
