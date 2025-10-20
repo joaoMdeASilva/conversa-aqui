@@ -5,10 +5,10 @@ import UserEmailValidation from "./classes/validation/UserEmailValidation.js";
 
 const loginForm = document.querySelector('#loginForm'); // Pegando o formulário
 
-const getName = document.getElementById('name');
-const getEmail = document.getElementById('email');
-const getPassword = document.getElementById('password');
-const getConfirmPassword = document.getElementById('confirm-password');
+const getNameElement = document.getElementById('name');
+const getEmailElement = document.getElementById('email');
+const getPasswordElement = document.getElementById('password');
+const getConfirmPasswordElement = document.getElementById('confirm-password');
 
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -19,20 +19,20 @@ function formValidation() {
   const minNameLength = 3;
   const minPassLength = 8;
 
-  const userNameValidation = new UserNameValidation(getName, minNameLength);
+  const userNameValidation = new UserNameValidation(getNameElement, minNameLength);
   const userNameValidationResult = userNameValidation.isUserNameValid();
 
-  const emailValidation = new UserEmailValidation(getEmail);
+  const emailValidation = new UserEmailValidation(getEmailElement);
   const userEmailValidationResult = emailValidation.isUserEmailValid();
 
-  const userPasswordValidation = new UserPasswordValidation(minPassLength, getPassword, getConfirmPassword);
+  const userPasswordValidation = new UserPasswordValidation(minPassLength, getPasswordElement, getConfirmPasswordElement);
 
   const userPassworValidationResult = userPasswordValidation.isUserPasswordValid();
   const userConfirmPasswordValidationResult = userPasswordValidation.isUserConfirmPasswordValid();
   const isUserPasswordAndConfirmPasswordEqualResult = userPasswordValidation.isUserPasswordAndConfirmPasswordEqual()
 
   if (!isUserPasswordAndConfirmPasswordEqualResult && userConfirmPasswordValidationResult) {
-    Helper.errorMessage(getConfirmPassword, 'A senha de confirmação deve ser igual a senha anterior!');
+    Helper.errorMessage(getConfirmPasswordElement, 'A senha de confirmação deve ser igual a senha anterior!');
   }
 
   const validation = userNameValidationResult && userEmailValidationResult && userPassworValidationResult && userConfirmPasswordValidationResult && isUserPasswordAndConfirmPasswordEqualResult;
